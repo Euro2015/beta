@@ -11,12 +11,15 @@
  * @property string $likes_total
  * @property string $dislikes_total
  * @property string $attachement
+ * @property string $thumb_attachment
  * @property string $is_spam
  * @property string $first_comment
  * @property string $date_create
  */
 class Comments extends CActiveRecord
 {
+
+     public $thumb_attachment;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.

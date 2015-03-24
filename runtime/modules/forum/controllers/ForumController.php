@@ -59,6 +59,7 @@ class ForumController extends Controller
             $message = $_POST['message'];            
             $commentReference = $_POST['commentReference'];
             $attachementUploadFile = $_POST['attachementUploadFile'];
+            $attachementThumbUploadFile = $_POST['thumbattachementUploadFile'];
             
             // No listing so return null
             if( $listingId == NULL ){
@@ -82,7 +83,11 @@ class ForumController extends Controller
                 $comment->attachement = $attachementUploadFile;
             }
             
-            
+            if( ($attachementThumbUploadFile != "null") && (is_file(ForumClass::$uploadThumbDirectoryPath.$attachementThumbUploadFile)) ){
+
+                $comment->thumb_attachment = $attachementThumbUploadFile;
+            }
+
             $comment->date_create = date('Y-m-d H:i:s');
             $comment->save();
             
@@ -484,6 +489,68 @@ class ForumController extends Controller
             echo CJSON::encode(array("action_status" => $actionStatus, "message" => $message, "file_name" => $fileName));
             
             
+    }
+
+    public function actionUploadThumbattachement(){
+
+
+        if( (Yii::app()->user->isGuest) && (empty(Yii::app()->user->Id)) ){
+
+            throw new CHttpException(302, "");
+
+        }
+
+        $error = FALSE;
+        $message = "Upload attachment success";
+        $fileName = "error";
+
+        if( empty($_FILES) || ($_FILES['thumb_attchement']['error'] != 0)  ){
+
+            $error = TRUE;
+            $message = "Attachment not found.";
+
+        }
+
+        if( ! $error ){
+
+            $attachement = $_FILES['thumb_attchement'];
+
+            if( (!$error) && ( !in_array($attachement['type'], ForumClass::$allowedThumbUploadType)) ){
+
+                $error = TRUE;
+                $message = "You may not upload an illegal file.".'<br/>';
+                $message .= '<span style="color: #6b6d6e;">File types allowed:- Image files only.</span>';
+            }
+
+            if( (!$error) && ( $attachement['size'] > ForumClass::$maxUploadFile) ){
+
+                $error = TRUE;
+                $message = "Attachment size not allowed.";
+
+            }
+
+        }
+
+        if( !$error ){
+
+            $fileToUploadPath = ForumClass::$uploadThumbDirectoryPath.time().".".$attachement['name'];
+
+            // Add time in file name to avoid conflict beetween files names
+            $fileName = time().".".$attachement['name'];
+
+            if( ! (move_uploaded_file($attachement['tmp_name'], $fileToUploadPath)) ){
+
+                $error = TRUE;
+                $message = "Upload attachement failed.";
+                $fileName = "error";
+            }
+        }
+
+        $actionStatus = (!$error) ? "1" : "0";
+
+        echo CJSON::encode(array("action_status" => $actionStatus, "message" => $message, "file_name" => $fileName));
+
+
     }
     
     

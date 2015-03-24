@@ -28,18 +28,19 @@ class ForumClass extends CComponent {
     public static $userProfession = '0';
     
     // Directory for upload attachement
-    public static $uploadDirectoryPath = 'upload/comments/';
-    
+    public static $uploadDirectoryPath = 'upload/comments/large/';
+
+    public static $uploadThumbDirectoryPath = 'upload/comments/thumb/';
+
     // Max size file to upload ( 2 MB )
     public static $maxUploadFile = 2097152;
     
     // Allowed mime type for file to upload
     public static $allowedUploadType = array("application/pdf", "application/zip", "application/x-rar-compressed", "application/x-compressed", "image/jpg", "image/jpeg", "image/png", "image/bmp", "image/gif", "image/thm", "image/tif");
-    
-    // Forum administrator email
-    //public static $adminMail = "dsp7@blueyonder.co.uk";
 
-    public static $adminMail = "anand.seed@gmail.com";
+    public static $allowedThumbUploadType = array("image/jpg", "image/jpeg", "image/png", "image/bmp", "image/gif", "image/thm", "image/tif");
+    // Forum administrator email
+    public static $adminMail = "dsp7@blueyonder.co.uk";
     
     // Key to use when checking admin connection (manage spam comments)
     public static $key = "U:h4y)f9";

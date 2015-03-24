@@ -40,6 +40,10 @@
         height: 40px;
         padding: 4px;
 		background:none;
+    cursor: auto;
+}
+.submit-comment textarea:hover{
+    cursor: pointer;
 }
 #submit-comment input[type=submit]{
 	background:url(../images/comment-submit.jpg) no-repeat center center;
@@ -118,7 +122,7 @@
 .page_numbers .active{
 	color:#A84793;
 	font-weight:bold;}
-	.dd_post_button, .dd_post_msg_button
+	.dd_post_button, .dd_post_msg_button , .review_dd_post_button
 	{
 		padding:8px 20px;
 		background:#dfdfdf;
@@ -131,6 +135,8 @@
 	
 		-webkit-border-radius:3px;
 		cursor:pointer;
+        margin-left: 5px;
+        margin-top: 5px;
 	}
 	.clearboth
 	{
@@ -141,7 +147,7 @@
 		list-style:none;
 		padding:10px 0 0; 
 		overflow:hidden;
-		width:100%;
+		width:101%;
 		float:left;
 		text-align:center;
                 font-size:0.8em;
@@ -244,7 +250,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', end
 	.dd_coment
 	{
 		float:left;
-                width:613px;
+                width:596px;
 	}
 	.comment
 	{
@@ -252,6 +258,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', end
 		width:81%;
 		padding-bottom:5px;
 		/*font-size:.9em;*/
+        word-wrap: break-word;
 	}
 	.dd_coment_heading
 	{
@@ -277,7 +284,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', end
         
 	.like_buuton_box
 	{
+		float:right;
+        margin-right: -19px;
+        margin-top: -24px;
+
+
 	}
+    .msg_like_buuton_box{
+        float:right;
+    }
 	.like_button
 	{
 		float:left;
@@ -285,8 +300,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', end
 		background:url(../images/icons/like.png) no-repeat center right;
 		padding:2px 20px 2px 2px;
 		margin-right:6px;
-                cursor: pointer;
+        cursor: pointer;
+        color:#000;
 	}
+    .like_button:hover
+    {
+        color: #00acce;
+    }
 	.dislike_button
 	{
 		float:right;
@@ -294,8 +314,32 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', end
 		display:block;
 		background:url(../images/icons/dislike.png) no-repeat center right;
                 cursor: pointer;
+        color:#000;
 	}
-	
+    .dislike_button:hover
+    {
+        color: #00acce;
+    }
+    .msg_like_button
+    {
+        float:left;
+        display:block;
+        background:url(../images/icons/like.png) no-repeat center right;
+        padding:2px 20px 2px 2px;
+        margin-right:6px;
+        cursor: pointer;
+    }
+    .msg_dislike_button
+    {
+        float:right;
+        padding:2px 20px 2px 2px;
+        display:block;
+        background:url(../images/icons/dislike.png) no-repeat center right;
+        cursor: pointer;
+    }
+
+
+
 	.floatRight
 	{
 		float:right;
@@ -315,8 +359,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', end
         
 	.dd_social_list
 	{
-                position: absolute;
-                top:-3px;
+        position: absolute;
+        top:20px;
 		list-style:none;
 		margin:0;
 		padding:0;
@@ -559,7 +603,7 @@ border-radius:5px;
 	border:none;
 	color:#DBB0DD;
 	padding:5px 34px 5px 5px ;
-	background:url(../images/request_submit_bg.png) no-repeat center right;
+	background:url(../images	/request_submit_bg.png) no-repeat center right;
 }
 .timer_container
 {
@@ -973,7 +1017,7 @@ border-radius:5px;
 			{
 				background: url(../images/buttons/View-videos.png) no-repeat scroll center top ;
     display: block;
-    padding: 25px 20px 5px;
+    padding: 30px 20px 5px;
     width: 73px;
 	float:left;
 	margin:5px 10px 6px 10px;
@@ -983,17 +1027,20 @@ border-radius:5px;
 			{
 				background: url("../images/icons/download.jpg") no-repeat scroll center -5px ;
     display: block;
-    padding: 25px 20px 5px;
-    width: 73px;
+    padding: 31px 20px 5px;
+    width: 82px;
 	float:left;
 	margin:5px 0px 6px 0px;
 }
 .server-id-box
-{    background: url("../images/icons/serverid.jpg") no-repeat scroll center center rgba(0, 0, 0, 0);
+{
+    background: url("../images/icons/serverid.jpg") no-repeat scroll center center rgba(0, 0, 0, 0);
     border: 1px solid #C6C6C6;
     height: 147px;
-    margin-top: 5px;
+    margin-top: 28px;
     width: 266px;
+    border-radius: 11px;
+    padding: 15px;
 }
 .open-bidding textarea
 {
@@ -1207,3 +1254,17 @@ width:100%;
 
     display:block;
 }
+
+#fade {
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: #808080;
+    z-index:1001;
+    -moz-opacity: 0.8;
+    filter: alpha(opacity=80);
+    display:block;
+}
+
+

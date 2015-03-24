@@ -749,6 +749,7 @@ $stat ="Permenant Deleted";
         	}
           	echo "upload/users/".Yii::app()->user->getState('ufolder')."/videos/".$name.$extension;
             */
+			
            	echo $name.'.'.$type;
         	exit; 
     }
@@ -795,7 +796,93 @@ $stat ="Permenant Deleted";
 	 * Deletes a particular model.
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
-	 */	 public function actionldelete()	{		    $id = Yii::app()->request->getParam('listid');				$this->loadModel($id)->delete();				$this->redirect($this->createUrl('/listing'));			}	 	
+	 */	 
+	 
+	 public function actionldelete()
+
+	 {		    
+	 
+	 $id = Yii::app()->request->getParam('listid');	
+	 
+	 $model=$this->loadModel($id);
+	 
+	 $user_details = User::model()->findAllByAttributes(array("drg_uid"=>$model->drg_uid));
+	 
+	 $user_id = $user_details[0]['drg_id'];
+	 
+	 $user_name = $user_details[0]['drg_username'];
+	 
+	 $folder=$user_name.'_'.$user_id;
+	 
+	 $path =  $_SERVER['DOCUMENT_ROOT'].'/'; 
+			
+	 $userfolder = $path.'upload/users/'.$folder.'/';
+	 
+	 $logo = $model->drg_logo;
+	 
+	 $bigimgpath = $userfolder.'listing/big/'.$logo;
+	 
+	 $thumbimgpath = $userfolder.'listing/thumb/'.$logo;
+	 
+	 unlink($bigimgpath);
+	 
+	 unlink($thumbimgpath);
+	 
+	 $attribs = array('drg_lid'=>$id);
+	 
+     $criteria = new CDbCriteria(array('order'=>'drg_video_id ASC'));
+	 
+	 $vids = Userlistingvideos::model()->findAllByAttributes($attribs, $criteria);
+	 
+	 foreach ($vids as $videos)
+	 {
+			
+			$vid=$videos->drg_listing_video;
+			
+			$videopath=$userfolder."videos/".$vid; 
+			
+			unlink($videopath);
+	 }
+	 
+	 $attribs1 = array('drg_lid'=>$id);
+	 
+     $criteria1 = new CDbCriteria(array('order'=>'drg_image_id ASC'));
+	 
+	 $imgs = Userlistingimages::model()->findAllByAttributes($attribs1, $criteria1);
+	 
+	 foreach ($imgs as $images)
+	 {
+			
+			$img=$images->drg_listing_image;
+			
+		    $bigimgpath1 = $userfolder.'listing/big/'.$img;
+	 
+	        $thumbimgpath1 = $userfolder.'listing/thumb/'.$img;
+			
+		    unlink($bigimgpath1);
+	 
+	        unlink($thumbimgpath1);
+	 }
+	 
+     $query = "delete from `drg_listing_images` where `drg_lid` = :date";
+	 
+     $command = Yii::app()->db->createCommand($query);
+	 
+     $command->execute(array('date' => $id));
+
+     $query1 = "delete from `drg_listing_videos` where `drg_lid` = :date1";
+
+	 $command1 = Yii::app()->db->createCommand($query1);
+ 
+     $command1->execute(array('date1' => $id));
+						
+     $model->delete();	 
+
+	 $this->redirect($this->createUrl('/listing'));	
+	 
+	 }	 	
+	 
+	 
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();

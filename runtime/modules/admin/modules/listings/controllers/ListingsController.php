@@ -334,9 +334,9 @@ unlink($tvidpath2);
 								$subjectcc=$model['drg_title']." has been successfully published";
   $sitelink='<a href="'.Yii::app()->getBaseUrl(true).'" target="_blank" >here >> </a>';
      $llink='<a href="'.Yii::app()->getBaseUrl(true)."/"."listing"."/"."selectlisting"."/"."listid"."/".$model->drg_lid.'" target="_blank" >here >> </a>';
-	   	$ltitle="<font color='orange'><i>".$model['drg_title']."</i></font>";
-	   		        $ldate="<font color='orange'><i>".$model['drg_date']."</i></font>";
-			        $lstatus="<font color='#15c'><i>".$status."</i></font>";
+	   	$ltitle="<i>".$model['drg_title']."</i>";
+	   		        $ldate="<i>".$model['drg_date']."</i>";
+			        $lstatus="<i>".$status."</i>";
 
 	   $string = array(
                         '{{#LISTINGTITLE#}}'=>ucwords($ltitle),
@@ -357,6 +357,20 @@ unlink($tvidpath2);
 		{
 			$model->drg_listingstatus = 1;
 			$model->drg_approvedate = date('Y-m-d');
+			 $attribs = array('drg_lid'=>$model->drg_lid);
+            $criteria = new CDbCriteria(array('order'=>'drg_video_id ASC'));
+			$vids = Userlistingvideos::model()->findAllByAttributes($attribs, $criteria);
+			foreach ($vids as $videos)
+			{
+			
+			$cvid1=$videos->drg_listing_video;
+            $tvid1=str_replace('flv','mp4',$cvid1);
+			$path =  $_SERVER['DOCUMENT_ROOT'].'/'; 
+			$temp_dir=$path."temp/";
+			$tvidpath1=$path."temp/".$tvid1; 
+			unlink($tvidpath1);
+			}
+
 			if($model->save()){           	    
                 $this->render('update',array('model'=>$model,));
             }else {

@@ -48,6 +48,8 @@ class ContactController extends Controller
           $result1 =  SharedFunctions::app()->sendmail($uemail,$template->template_subject,$body1,$ffname); 
 			
 		}
+		
+		 unlink($ffname);
       
 	     $this->render('success',array('model'=>$uemail));
 	 
