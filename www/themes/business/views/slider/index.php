@@ -1,6 +1,6 @@
 <div class='home-slider-wrap'><div id='carousel-wrapper'><div id='dragongallery' class='stepcarousel'><div class='belt'><div class='panel'><div class='paneloverlay-wrapper'><div class='paneloverlay-top'>&nbsp;</div><div class='paneloverlay'><p class='speech-bubble'>What do we do?      A website designed to help you change your financial future.<br /><a href='javascript:void(0)' onclick="show_video('http://youtu.be/TURWdiUPLzE');" title='' >Find out more ></a></p><p class='speech-bubble-sig'></p></div><!-- /paneloverlay --><div class='paneloverlay-bottom'>&nbsp;</div></div><!-- paneloverlay-wrapper -->
  <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/business/images/blank.png' />
- <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/upload/sliders/big/Business_supermarket_1426670940.png' alt='' style='float: right;position: relative;overflow: hidden;height: 287px; margin-top: -295px;margin-right: 24px;' />
+ <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/upload/sliders/big/Business_supermarket_1427204591.png' alt='' style='float: right;position: relative;overflow: hidden;height: 287px; margin-top: -295px;margin-right: 24px;' />
                                 </div><div class='panel'><div class='paneloverlay-wrapper'><div class='paneloverlay-top'>&nbsp;</div><div class='paneloverlay'><p class='speech-bubble'>Get free entry to our cash prize draw for your efforts every month.<br /><a href='javascript:void(0)' onclick="show_video('http://youtu.be/YlIhWEhFyE4');" title='' >Find out more ></a></p><p class='speech-bubble-sig'></p></div><!-- /paneloverlay --><div class='paneloverlay-bottom'>&nbsp;</div></div><!-- paneloverlay-wrapper -->
  <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/business/images/blank.png' />
  <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/upload/sliders/big/Business_supermarket_1424511743.png' alt='' style='float: right;position: relative;overflow: hidden;height: 287px; margin-top: -295px;margin-right: 24px;' />
@@ -33,7 +33,7 @@
 
                     <!-- /gallery-navigation -->                  <div id='search-tab'>
 
-                        <input type="text" onblur="this.value='Search site...';" onfocus="this.value='';" value="Search site..." />
+                        <input type='text' onblur='this.value='Search site...';' onfocus='this.value='';' value='Search site...' />
 
                         <a href='user_listing_search.php' title='Search the site' >
 

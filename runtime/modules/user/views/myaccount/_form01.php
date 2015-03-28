@@ -90,7 +90,7 @@
                       <tr>
                         <td class="mandatory-field">*</td>
                         <td>New email address</td>
-                        <td><input class="inputfield" id="drf_nemail" name="drg_nemail" type="text" onblur="return email_form_checkemail();" /></td>
+                        <td><input class="inputfield" id="drf_nemail" name="drg_nemail" type="text" onblur="validateEmail('drf_nemail');" /></td>
                       </tr>
                       <tr>
                         <td class="mandatory-field">*</td>
@@ -667,73 +667,6 @@ function password_form_validation()
 	}
 
 // email form validations
-
-
-function email_form_checkemail() { 
-   
-    var failedvalidation = false;
- 	var x = document.getElementById("drf_email").value;           
-    var atpos=x.indexOf("@");            
-    var dotpos=x.lastIndexOf(".");            
-    if ((atpos < 1 || dotpos<atpos+2 || dotpos+2>=x.length))             
-        {              
-            $("#drf_email").parent().addClass('mandatoryerror');
-            $("#drf_email").attr('placeholder','Please enter a valid email'); 
-            failedvalidation = true;               
-        }
-	var y = document.getElementById("drf_nemail").value;           
-    var atpos=y.indexOf("@");            
-    var dotpos=y.lastIndexOf(".");            
-    if ((atpos < 1 || dotpos<atpos+2 || dotpos+2>=y.length))             
-        {              
-            $("#drf_nemail").parent().addClass('mandatoryerror');
-            $("#drf_nemail").attr('placeholder','Please enter a valid email'); 
-            failedvalidation = true;               
-        }	
-	var em = document.getElementById("drf_nemail").value;
-	 if(failedvalidation) return false;
-
-	if(x !="" && em !=""){
-	   //loader();
-     $("#loading-div").hide();
-		 $.ajax({ 
-             type: "POST",
-             url: "<?php echo Yii::app()->createUrl('/user/myaccount/checkemail/'); ?>",
-			 async: false,
-             data: 'type=edit_email&drg_email='+x+'&drg_nemail='+em,
-             beforeSend:function(){
-                $("#loading-div").hide();
-             }, 
-             success: function(result)
-			 {
-                $("#loading-div").hide();
-                //loader();
-                var obj = jQuery.parseJSON(result); 
-                if(obj.success){                    
-					
-                }else {
-                    $("#drf_nemail,#drf_cemail").parent().addClass('mandatoryerror');
-                    $("#drf_nemail,#drf_cemail").attr('placeholder',obj.message); 
-                      failedvalidation = true;
-			         $("#drf_nemail,#drf_cemail").val('');
-                } 
-                  
-        	},
-			error: function(a)
-			 {
-				 alert(a);
-			 }
-  		});
-     }
- 	if (failedvalidation) 
-	{
-        return false;
-    }
-    return false;
-}
-
-	
-
 function email_form_validation() { 
     
     var failedvalidation = false;
@@ -792,7 +725,7 @@ function email_form_validation() {
                     $("#drf_nemail,#drf_cemail").parent().addClass('mandatoryerror');
                     $("#drf_nemail,#drf_cemail").attr('placeholder',obj.message); 
                       failedvalidation = true;
-			         $("#drf_nemail,#drf_cemail").val('');
+			         $("#drf_email,#drf_nemail,#drf_cemail").val('');
                 } 
                   
         	},

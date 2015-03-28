@@ -1,6 +1,6 @@
 <div class='home-slider-wrap'><div id='carousel-wrapper'><div id='dragongallery' class='stepcarousel'><div class='belt'><div class='panel'><div class='paneloverlay-wrapper'><div class='paneloverlay-top'>&nbsp;</div><div class='paneloverlay'><p class='speech-bubble'>Check out the quick links to our user video tutorials to help you get started quickly<br /><a href='javascript:void(0)' onclick="show_video('http://youtu.be/HR6KfAwux1o');" title='' >Find out more ></a></p><p class='speech-bubble-sig'></p></div><!-- /paneloverlay --><div class='paneloverlay-bottom'>&nbsp;</div></div><!-- paneloverlay-wrapper -->
  <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/business/images/blank.png' />
- <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/upload/sliders/big/Business_supermarket_1424629985.png' alt='' style='float: right;position: relative;overflow: hidden;height: 287px; margin-top: -295px;margin-right: 24px;' />
+ <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/upload/sliders/big/Business_supermarket_1427206039.png' alt='' style='float: right;position: relative;overflow: hidden;height: 287px; margin-top: -295px;margin-right: 24px;' />
                                 </div><div class='panel'><div class='paneloverlay-wrapper'><div class='paneloverlay-top'>&nbsp;</div><div class='paneloverlay'><p class='speech-bubble'>Got an idea and don't know what to do next?
 Then check out the how to get started quickly<br /><a href='javascript:void(0)' onclick="show_video('http://youtu.be/IZ2k7oU87Lg');" title='' >Find out more ></a></p><p class='speech-bubble-sig'></p></div><!-- /paneloverlay --><div class='paneloverlay-bottom'>&nbsp;</div></div><!-- paneloverlay-wrapper -->
  <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/business/images/blank.png' />
@@ -34,7 +34,7 @@ Then check out the how to get started quickly<br /><a href='javascript:void(0)' 
 
                     <!-- /gallery-navigation -->                  <div id='search-tab'>
 
-                        <input type="text" onblur="this.value='Search site...';" onfocus="this.value='';" value="Search site..." />
+                        <input type='text' onblur='this.value='Search site...';' onfocus='this.value='';' value='Search site...' />
 
                         <a href='user_listing_search.php' title='Search the site' >
 

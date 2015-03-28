@@ -304,8 +304,8 @@ class MyaccountController extends Controller
 	    }else
 	    	throw new CHttpException(404,'The requested page does not exist.');
 	}
-    
-    public function actionChangeemail(){
+     public function actionChangeemail(){                       $newEmail = Yii::app()->request->getParam('drg_nemail');                $oldEmail = Yii::app()->request->getParam('drg_email');                $newmode = Myaccount::model()->find("drg_email= '".$newEmail."'");                if(SharedFunctions::app()->validateEmail($newEmail) && SharedFunctions::app()->validateEmail($oldEmail)){        if(!$newmode ){                  $model = Myaccount::model()->find("drg_id=".Yii::app()->user->getId()." and drg_email= '".$oldEmail."'");                               if($model){                                     $model->drg_email = $newEmail;                     if($model->save())                    {                    	$template =  MailTemplate::getTemplate('Email_Update');                     	                    	$string = array(                    	    '{{#OLD_EMAIL#}}' => $oldEmail,                    	    '{{#NEW_EMAIL#}}' => $model->drg_email,                    	    '{{#USERNAME#}}'=>ucwords($model->drg_name .' '.$model->drg_surname),                    	    '{{#COMPANY_NAME#}}'=>Yii::app()->params['company_name'],                    	    '{{#COMPANY_SIGNATURE#}}'=>Yii::app()->params['signature'],                    	    '{{#COMPANY_EMAIL#}}'=>Yii::app()->params['company_email']                    	);                    	                    	$body = SharedFunctions::app()->mailStringReplace($template->template_body,$string);                        	$result =  SharedFunctions::app()->sendmail($model->drg_email,$template->template_subject,$body);						$result2 =  SharedFunctions::app()->sendmail($oldEmail,$template->template_subject,$body);						                        $msg = array('success'=>true,'message'=>'Email Updated Sucessfully');					}else {                        $msg = array('success'=>false,'message'=>'Email Not Updated !');                    }                }else {                                $msg = array('success'=>false,'message'=>'Current Email Not Valid !');                               }                    }else {            $msg = array('success'=>false,'message'=>'Email Already In Use!');       }                   }else {            $msg = array('success'=>false,'message'=>'Invalid Email !');       }               echo CJSON::encode($msg);       Yii::app()->end();    }	
+    public function actionCheckemail(){
         
        
         $newEmail = Yii::app()->request->getParam('drg_nemail');
@@ -316,36 +316,7 @@ class MyaccountController extends Controller
         
         if(SharedFunctions::app()->validateEmail($newEmail) && SharedFunctions::app()->validateEmail($oldEmail)){
         if(!$newmode ){   
-               $model = Myaccount::model()->find("drg_id=".Yii::app()->user->getId()." and drg_email= '".$oldEmail."'");
-                
-               if($model){
-                 
-                    $model->drg_email = $newEmail; 
-                    if($model->save())
-                    {
-                    	$template =  MailTemplate::getTemplate('Email_Update');                     	
-                    	$string = array(
-                    	    '{{#OLD_EMAIL#}}' => $oldEmail,
-                    	    '{{#NEW_EMAIL#}}' => $model->drg_email,
-                    	    '{{#USERNAME#}}'=>ucwords($model->drg_name .' '.$model->drg_surname),
-                    	    '{{#COMPANY_NAME#}}'=>Yii::app()->params['company_name'],
-                    	    '{{#COMPANY_SIGNATURE#}}'=>Yii::app()->params['signature'],
-                    	    '{{#COMPANY_EMAIL#}}'=>Yii::app()->params['company_email']
-                    	);                    	
-                    	$body = SharedFunctions::app()->mailStringReplace($template->template_body,$string);    
-                    	$result =  SharedFunctions::app()->sendmail($model->drg_email,$template->template_subject,$body);
-						$result2 =  SharedFunctions::app()->sendmail($oldEmail,$template->template_subject,$body);						
-                        $msg = array('success'=>true,'message'=>'Email Updated Sucessfully');
-					}else {
-                        $msg = array('success'=>false,'message'=>'Email Not Updated !');
-                    } 
-               }else {
-                
-                $msg = array('success'=>false,'message'=>'Current Email Not Valid !');
-                
-               } 
-           
-        }else {
+        }		else		{
             $msg = array('success'=>false,'message'=>'Email Already In Use!');
        }  
           

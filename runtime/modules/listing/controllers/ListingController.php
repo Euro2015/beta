@@ -815,6 +815,8 @@ $stat ="Permenant Deleted";
 	 $folder=$user_name.'_'.$user_id;
 	 
 	 $path =  $_SERVER['DOCUMENT_ROOT'].'/'; 
+	 
+	 $temp_folder = $path.'temp/';
 			
 	 $userfolder = $path.'upload/users/'.$folder.'/';
 	 
@@ -839,7 +841,11 @@ $stat ="Permenant Deleted";
 			
 			$vid=$videos->drg_listing_video;
 			
+			$mp4vid = str_replace("flv","mp4",$vid);
+			
 			$videopath=$userfolder."videos/".$vid; 
+			
+			$tempvideopath=$temp_folder.$mp4vid; 
 			
 			unlink($videopath);
 	 }
