@@ -213,7 +213,7 @@ function ck(val){
                 	<span class="span">
                     Email Address 
                     </span>
-                    <a class="sl-tip tooltip" href="#;">?<span class="classic">Please enter your email address if you wish to receive a response from us.</span></a></span>
+                    <a class="sl-tip tooltip" href="#;">?<span class="classic">Please enter your email address if you wish to receive a response from us.</span></a>
                     <!--<a id="demo-basic" title="Please enter your email address if you wish to receive a response from us" href="#">
                         <span class="helpico">
                              ? 
@@ -247,7 +247,7 @@ to get back to the page that caused the
 error.<br />
 Or if you have an idea to make this site
 better then tell us about it here.
-error.</span></a></span>
+error.</span></a>
                    <!-- <a id="demo-basic2" title="Please enter details of the error that you experience. If this is not the correct page then please use your browser back button to get back to the page that caused the error. Or if you have an idea to make this site better then tell us about it here." href="#">
                         <span class="helpico">
                             ?

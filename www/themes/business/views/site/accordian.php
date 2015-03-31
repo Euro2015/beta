@@ -5,7 +5,7 @@ if(Yii::app()->urlManager->parseUrl(Yii::app()->request)=="listing/listing/creat
 ?>
 
 <div class="accordian-wrap">
-    <div class="accordion">
+    <div id="accordion">
         <h3 class="aorange">Video Tutorials</h3>
         <div class="aorange accordian-box">
             <ul>

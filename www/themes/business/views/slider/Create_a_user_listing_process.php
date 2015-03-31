@@ -1,18 +1,18 @@
 <div class='home-slider-wrap'><div id='carousel-wrapper'><div id='dragongallery' class='stepcarousel'><div class='belt'><div class='panel'><div class='paneloverlay-wrapper'><div class='paneloverlay-top'>&nbsp;</div><div class='paneloverlay'><p class='speech-bubble'>Not sure what to do next? Then check out this short video to get you going.<br /><a href='javascript:void(0)' onclick="show_video('http://youtu.be/gQVy7JGWq08');" title='' >Find out more ></a></p><p class='speech-bubble-sig'></p></div><!-- /paneloverlay --><div class='paneloverlay-bottom'>&nbsp;</div></div><!-- paneloverlay-wrapper -->
- <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/business/images/blank.png' alt="Blank slider image" />
- <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/upload/sliders/big/Business_supermarket_1424705692.png' alt='' style='float: right;position: relative;overflow: hidden;height: 287px; margin-top: -295px;margin-right: 24px;'/>
+ <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/business/images/blank.png' />
+ <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/upload/sliders/big/Business_supermarket_1424705692.png' alt='' style='float: right;position: relative;overflow: hidden;height: 287px; margin-top: -295px;margin-right: 24px;' />
                                 </div><div class='panel'><div class='paneloverlay-wrapper'><div class='paneloverlay-top'>&nbsp;</div><div class='paneloverlay'><p class='speech-bubble'>It costs nothing to list your business idea but the rewards could be lucrative.<br /><a href='javascript:void(0)' onclick="show_video('http://youtu.be/N65U3m00esw');" title='' >Find out more ></a></p><p class='speech-bubble-sig'></p></div><!-- /paneloverlay --><div class='paneloverlay-bottom'>&nbsp;</div></div><!-- paneloverlay-wrapper -->
- <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/business/images/blank.png' alt="Blank slider image" />
- <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/upload/sliders/big/Business_supermarket_1424705750.png' alt='' style='float: right;position: relative;overflow: hidden;height: 287px; margin-top: -295px;margin-right: 24px;'/>
+ <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/business/images/blank.png' />
+ <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/upload/sliders/big/Business_supermarket_1424705750.png' alt='' style='float: right;position: relative;overflow: hidden;height: 287px; margin-top: -295px;margin-right: 24px;' />
                                 </div><div class='panel'><div class='paneloverlay-wrapper'><div class='paneloverlay-top'>&nbsp;</div><div class='paneloverlay'><p class='speech-bubble'>Need legal advice? Then check out the Business Services section for help<br /><a href='http://www.business-supermarket.com/businesslisting/business-services'  title='' target='_blank' >Find out more ></a></p><p class='speech-bubble-sig'></p></div><!-- /paneloverlay --><div class='paneloverlay-bottom'>&nbsp;</div></div><!-- paneloverlay-wrapper -->
- <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/business/images/blank.png' alt="Blank slider image" />
- <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/upload/sliders/big/Business_supermarket_1424705886.png' alt='' style='float: right;position: relative;overflow: hidden;height: 287px; margin-top: -295px;margin-right: 24px;'/>
+ <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/business/images/blank.png' />
+ <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/upload/sliders/big/Business_supermarket_1424705886.png' alt='' style='float: right;position: relative;overflow: hidden;height: 287px; margin-top: -295px;margin-right: 24px;' />
                                 </div><div class='panel'><div class='paneloverlay-wrapper'><div class='paneloverlay-top'>&nbsp;</div><div class='paneloverlay'><p class='speech-bubble'>A fraid that someone will steal your idea? Then check out this short video to put your mind at ease<br /><a href='javascript:void(0)' onclick="show_video('http://youtu.be/DfBGPXuCeFo');" title='' >Find out more ></a></p><p class='speech-bubble-sig'></p></div><!-- /paneloverlay --><div class='paneloverlay-bottom'>&nbsp;</div></div><!-- paneloverlay-wrapper -->
- <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/business/images/blank.png' alt="Blank slider image" />
- <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/upload/sliders/big/Business_supermarket_1424707686.png' alt='' style='float: right;position: relative;overflow: hidden;height: 287px; margin-top: -295px;margin-right: 24px;'/>
+ <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/business/images/blank.png' />
+ <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/upload/sliders/big/Business_supermarket_1424707686.png' alt='' style='float: right;position: relative;overflow: hidden;height: 287px; margin-top: -295px;margin-right: 24px;' />
                                 </div><div class='panel'><div class='paneloverlay-wrapper'><div class='paneloverlay-top'>&nbsp;</div><div class='paneloverlay'><p class='speech-bubble'>Get comprehensive data to show if your business idea has a good chance of success<br /><a href='javascript:void(0)' onclick="show_video('http://youtu.be/KFCg1N-FbNI');" title='' >Find out more ></a></p><p class='speech-bubble-sig'></p></div><!-- /paneloverlay --><div class='paneloverlay-bottom'>&nbsp;</div></div><!-- paneloverlay-wrapper -->
- <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/business/images/blank.png' alt="Blank slider image" />
- <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/upload/sliders/big/Business_supermarket_1424706026.png' alt='' style='float: right;position: relative;overflow: hidden;height: 287px; margin-top: -295px;margin-right: 24px;'/>
+ <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/themes/business/images/blank.png' />
+ <img src='<?php echo Yii::app()->getBaseUrl(true); ?>/upload/sliders/big/Business_supermarket_1424706026.png' alt='' style='float: right;position: relative;overflow: hidden;height: 287px; margin-top: -295px;margin-right: 24px;' />
                                 </div><!-- /panel -->
 
                             <!-- End of carousel content -->
@@ -33,7 +33,7 @@
 
                     <!-- /gallery-navigation -->                  <div id='search-tab'>
 
-                        <input type="text" onblur="this.value='Search site...';" onfocus="this.value='';" value="Search site..." />
+                        <input type='text' onblur='this.value='Search site...';' onfocus='this.value='';' value='Search site...' />
 
                         <a href='user_listing_search.php' title='Search the site' >
 
